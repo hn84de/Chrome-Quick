@@ -1,3 +1,12 @@
+var hn = document.createElement("div");
+document.body.appendChild(hn);
+hn.style.position="absolute";
+hn.style.top="65px";
+hn.style.left="65px";
+hn.style.width="50px";
+hn.style.height="50px";
+hn.style.backgroundColor="black";
+
 document.addEventListener("keydown", function(event){
    switch(event.keyCode){
        case 87:

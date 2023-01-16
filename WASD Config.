@@ -104,3 +104,15 @@ document.addEventListener("keydown", function(event){
            break;
    } 
 });
+
+function createBarx(){
+    let poi = document.createElement("div");
+    document.body.appendChild(poi);
+    poi.style.position="absolute";
+    poi.style.top=800 - h + "px";
+    poi.style.left= h + 50 + "px";
+    poi.style.width="5px";
+    poi.style.height= h + "px";
+    poi.style.backgroundColor="black";
+    h+=5;
+}

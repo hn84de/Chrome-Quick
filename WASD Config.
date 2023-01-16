@@ -1,0 +1,16 @@
+document.addEventListener("keydown", function(event){
+   switch(event.keyCode){
+       case 87:
+           //if w is pressed
+           break;
+        case 83:
+           //if s is pressed
+           break;
+        case 65:
+           //if a is pressed
+           break;
+        case 68:
+           //if d is pressed
+           break;
+   } 
+});

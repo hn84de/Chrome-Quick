@@ -1,3 +1,8 @@
+<html>
+    <body>
+        
+    </body>
+</html>
 var hn = document.createElement("div");
 document.body.appendChild(hn);
 hn.style.position="absolute";
@@ -6,6 +11,40 @@ hn.style.left="65px";
 hn.style.width="50px";
 hn.style.height="50px";
 hn.style.backgroundColor="black";
+
+function coordinates(iop){
+    let xfirst = iop.style.width;
+    let xlength = xfirst.length;
+    let xasstr = xfirst.substring(0,(xlength-2));
+    let xsasnum = parseInt(xasstr);
+    let yfirst = iop.style.height;
+    let ylength = yfirst.length;
+    let yasstr = yfirst.substring(0,(ylength-2));
+    let ysasnum = parseInt(yasstr);
+    
+    let x2first = iop.style.left;
+    let x2length = x2first.length;
+    let x2asstr = x2first.substring(0,(x2length-2));
+    let x2sasnum = parseInt(x2asstr);
+    let y2first = iop.style.top;
+    let y2length = y2first.length;
+    let y2asstr = y2first.substring(0,(y2length-2));
+    let y2sasnum = parseInt(y2asstr);
+
+    var set = [];
+    for(let i=0; i<4;i++){
+        set[i] = [];
+    }
+    set[0][0] = x2sasnum;
+    set[0][1] = y2sasnum;
+    set[1][0] = x2sasnum - xsasnum;
+    set[1][1] = y2sasnum;
+    set[2][0] = x2sasnum;
+    set[2][1] = y2sasnum - ysasnum;
+    set[3][0] = x2sasnum - xsasnum;
+    set[3][1] = y2sasnum - ysasnum;
+    return set;
+};
 
 document.addEventListener("keydown", function(event){
    switch(event.keyCode){

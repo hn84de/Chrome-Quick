@@ -12,6 +12,49 @@ hn.style.width="50px";
 hn.style.height="50px";
 hn.style.backgroundColor="black";
 
+
+function move(hx,ele){
+    let x = parseInt(ele.style.left.substring(0,(ele.style.length-2)));
+    let y = parseInt(ele.style.top.substring(0,(ele.style.length-2)));
+    switch(hx){
+        case 0:
+            ele.style.left = 5 + x + "px";
+            break;
+        case 1:
+            ele.style.top = 5 + y + "px";
+            break;
+        case 2:
+            ele.style.left = x - 5 + "px";
+            break;
+        case 3: ele.style.top = y - 5 + "px";
+            break;
+        default: 
+            break;
+    }
+};
+
+
+document.addEventListener("keydown", function(event){
+   switch(event.keyCode){
+       case 87:
+           move(1,hn);
+           break;
+        case 83:
+           //if s is pressed
+           move(3,hn);
+        case 65:
+           move(2,hn);
+           break;
+        case 68:
+           move(0,hn);
+           break;
+       default:
+           break;
+   } 
+});
+
+
+
 function coordinates(iop){
     let xfirst = iop.style.width;
     let xlength = xfirst.length;

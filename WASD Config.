@@ -18,15 +18,15 @@ function move(hx,ele){
     let y = parseInt(ele.style.top.substring(0,(ele.style.length-2)));
     switch(hx){
         case 0:
-            ele.style.left = 5 + x + "px";
+            ele.style.left = x + 5 + "px";
             break;
         case 1:
-            ele.style.top = 5 + y + "px";
+            ele.style.top = y - 5 + "px";
             break;
         case 2:
             ele.style.left = x - 5 + "px";
             break;
-        case 3: ele.style.top = y - 5 + "px";
+        case 3: ele.style.top = y + 5 + "px";
             break;
         default: 
             break;
@@ -36,24 +36,23 @@ function move(hx,ele){
 
 document.addEventListener("keydown", function(event){
    switch(event.keyCode){
-       case 87:
+       case 87: //w up
            move(1,hn);
            break;
-        case 83:
+        case 83: //s down
            //if s is pressed
            move(3,hn);
-        case 65:
+           break;
+        case 65: //a negative x
            move(2,hn);
            break;
-        case 68:
+        case 68: //d positive x
            move(0,hn);
            break;
        default:
            break;
    } 
 });
-
-
 
 function coordinates(iop){
     let xfirst = iop.style.width;

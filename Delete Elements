@@ -1,0 +1,8 @@
+var count = document.querySelector("html").childNodes.length;
+for(let i = 0; i < count; i++){
+
+    let abc = document.querySelector("html").childNodes[i];
+    abc.remove();
+
+    
+}
